@@ -1,15 +1,35 @@
 # contacts_permission_handler
 
-A new Flutter plugin project.
+Helps with requesting access to user's contacts as well as checking contacts permission status.
 
-## Getting Started
+## Android Setup
+```dart
+package {yourPackageName}
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+import com.okello.contacts_permission_handler.SmileIdentityMainActivity
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class MainActivity: SmileIdentityMainActivity()
+```
 
+And in the Manifest xml file, make sure to include
+```
+ <uses-permission android:name="android.permission.READ_CONTACTS" />
+```
+
+## IOS setup
+Only make sure to include `NSContactsUsageDescription` in your info.plist file
+
+## Guide
+>Initialize e.g `plugin = ContactsPermissionHandler();`
+>Get status with: `plugin.checkStatus();`
+>Request access with: `plugin.requestAccess();`
+
+Both methods return `PermissionStatus`
+```dart
+enum PermissionStatus {
+  notDetermined,
+  restricted,
+  denied,
+  authorized,
+}
+```
