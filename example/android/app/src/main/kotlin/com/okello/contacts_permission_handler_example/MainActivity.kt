@@ -1,0 +1,5 @@
+package com.okello.contacts_permission_handler_example
+
+import com.okello.contacts_permission_handler.SmileIdentityMainActivity
+
+class MainActivity: SmileIdentityMainActivity()
