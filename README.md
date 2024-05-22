@@ -6,9 +6,9 @@ Helps with requesting access to user's contacts as well as checking contacts per
 ```dart
 package {yourPackageName}
 
-import com.okello.contacts_permission_handler.SmileIdentityMainActivity
+import com.okello.contacts_permission_handler.ContactsPermissionHandlerMainActivity
 
-class MainActivity: SmileIdentityMainActivity()
+class MainActivity: ContactsPermissionHandlerMainActivity()
 ```
 
 And in the Manifest xml file, make sure to include
