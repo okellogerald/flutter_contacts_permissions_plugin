@@ -11,12 +11,6 @@ class MethodChannelContactsPermissionHandler extends ContactsPermissionHandlerPl
   final methodChannel = const MethodChannel('contacts_permission_handler');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
-  }
-
-  @override
   Future<PermissionStatus?> checkStatus() async {
     final result = await methodChannel.invokeMethod<int>('checkStatus');
     if(result == null) return null;

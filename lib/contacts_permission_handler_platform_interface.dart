@@ -25,10 +25,6 @@ abstract class ContactsPermissionHandlerPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
-
   Future<PermissionStatus?> checkStatus() {
     throw UnimplementedError('checkStatus() has not been implemented.');
   }
